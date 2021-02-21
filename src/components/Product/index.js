@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { InputNumber } from 'primereact/inputnumber';
 import { Button } from 'primereact/button';
 import ProductViewCount from '../ProductViewCount';
+import './index.css'
 
 const Product = ({price}) => {
     const [productPrice, setProductPrice] = useState(price);
