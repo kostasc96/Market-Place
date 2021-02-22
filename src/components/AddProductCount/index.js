@@ -5,9 +5,6 @@ import ProductViewCount from '../ProductViewCount';
 import useProductCount, { ProductContext } from '../../useProductCount';
 
 const AddProductCount = () => {
-    // You lifted the state
-    // const [productCount, setProductCount] = useState(count);
-    // const [productPrice, setProductPrice] = useState(price);
 
     const { productPrice, productCount, setProductPrice, setProductCount } = useProductCount();
 
