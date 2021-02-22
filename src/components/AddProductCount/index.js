@@ -19,9 +19,6 @@ const AddProductCount = ({ productPrice, productCount,setProductCount,setProduct
 
       return (
         <div>
-          <div>
-            Number of products: <ProductViewCount count={productCount}/>
-          </div>
           Add or remove quantity of products:  
           <Button label="-" className="p-button-danger"
             onClick={() => setProductCount((count) => count - 1)}

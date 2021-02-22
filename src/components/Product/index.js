@@ -25,7 +25,6 @@ const Product = ({price}) => {
                 <Button label="Add" value="Enter" disabled={productCount<0} onClick={() => setProductCount(productCount) }/>
             </div>
             <div>
-                <ProductViewCount count={productCount}/>
                 {/** You need to lift the state up */}
                 <AddProductCount productPrice={productPrice} setProductPrice={setProductPrice} setProductCount={setProductCount} productCount={productCount}/>
             </div>
