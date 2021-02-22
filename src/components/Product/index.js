@@ -21,8 +21,8 @@ const Product = ({price}) => {
         <div className='product-image'>
             <img src='https://picsum.photos/200/300' />
             <div>
-                <InputNumber value={productCount} onValueChange={(e) => setProductCount(e.value)} />
-                <Button value="Enter" onClick={() => setProductCount(productCount)}/>
+                <InputNumber value={productCount} min={0} onValueChange={(e) => setProductCount(e.value)} />
+                <Button label="Add" value="Enter" disabled={productCount<0} onClick={() => setProductCount(productCount) }/>
             </div>
             <div>
                 <ProductViewCount count={productCount}/>
