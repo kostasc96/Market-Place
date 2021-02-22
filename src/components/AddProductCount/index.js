@@ -22,7 +22,7 @@ const AddProductCount = ({ productPrice, productCount,setProductCount,setProduct
           Add or remove quantity of products:  
           <Button label="-" className="p-button-danger"
             onClick={() => setProductCount((count) => count - 1)}
-            disabled={!(productCount - 1)}
+            disabled={productCount < 0}
           />
           <Button label="+" className="p-button-success"
             onClick={() => setProductCount((count) => count + 1)}

@@ -22,7 +22,7 @@ const Product = ({price}) => {
             <img src='https://picsum.photos/200/300' />
             <div>
                 <InputNumber value={productCount} min={0} onValueChange={(e) => setProductCount(e.value)} />
-                <Button label="Add" value="Enter" disabled={productCount<0} onClick={() => setProductCount(productCount) }/>
+                {/* <Button label="Add" value="Enter" disabled={productCount<0} onClick={() => setProductCount(productCount) }/> */}
             </div>
             <div>
                 {/** You need to lift the state up */}
