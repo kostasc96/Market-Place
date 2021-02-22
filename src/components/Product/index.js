@@ -1,16 +1,23 @@
 import AddProductCount from '../AddProductCount';
 import { useState, useEffect } from 'react';
+import { useContext } from 'react';
 import { InputNumber } from 'primereact/inputnumber';
 import { Button } from 'primereact/button';
 import ProductViewCount from '../ProductViewCount';
 import './index.css'
-import useProductCount from '../../useProductCount';
+import useProductCount, { ProductContext } from '../../useProductCount';
 
 const Product = ({price}) => {
 
-    const [productPrice, productCount, setProductCount, setProductPrice] = useProductCount(
-        { price }
-      );
+    const { productPrice, productCount, setProductPrice, setProductCount } = useProductCount();
+
+    useEffect(() => {
+        console.log('%c[Update] useEffect 🔁', 'color: aqua');
+        let calculatedPrice = price;
+        setProductPrice(() => productCount * calculatedPrice);
+    
+        return () => console.log('%c[Cleanup] the useEffect', 'color: tomato');
+      }, [productCount]);
 
     return(
         <div className='product-image'>

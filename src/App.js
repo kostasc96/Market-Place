@@ -1,6 +1,7 @@
 import { Button } from 'primereact/button';
 import './App.css';
 import Product from './components/Product';
+import { ProductProvider } from './useProductCount';
 
 /**
  * ⚡️[Improvement]
@@ -22,9 +23,15 @@ function App() {
         </Button>
       </div>
       <div className='cart' align="center">
+      <ProductProvider>
         <Product price={0.093} />
+      </ProductProvider>
+      <ProductProvider>
         <Product price={0.084} />
+      </ProductProvider>
+      <ProductProvider>
         <Product price={0.091} />
+      </ProductProvider>
       </div>
     </div>
   );
