@@ -5,7 +5,7 @@ import { InputNumber } from 'primereact/inputnumber';
 import { Button } from 'primereact/button';
 import ProductViewCount from '../ProductViewCount';
 import './index.css'
-import useProductCount, { ProductContext } from '../../useProductCount';
+import useProductCount,{ProductProvider, ProductContext } from '../../useProductCount';
 
 const Product = ({price}) => {
 
@@ -28,7 +28,7 @@ const Product = ({price}) => {
             </div>
             <div>
                 {/** You need to lift the state up */}
-                <AddProductCount productPrice={productPrice} setProductPrice={setProductPrice} setProductCount={setProductCount} productCount={productCount}/>
+                <AddProductCount/>
             </div>
         </div>
     );

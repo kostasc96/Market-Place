@@ -2,11 +2,14 @@ import { useState, useEffect } from 'react';
 import ProductViewsWithPrice from '../ProductViews';
 import { Button } from 'primereact/button';
 import ProductViewCount from '../ProductViewCount';
+import useProductCount, { ProductContext } from '../../useProductCount';
 
-const AddProductCount = ({ productPrice, productCount,setProductCount,setProductPrice, ...props }) => {
+const AddProductCount = () => {
     // You lifted the state
     // const [productCount, setProductCount] = useState(count);
     // const [productPrice, setProductPrice] = useState(price);
+
+    const { productPrice, productCount, setProductPrice, setProductCount } = useProductCount();
 
     useEffect(() => {
         console.log('%c[Update] useEffect 🔁', 'color: aqua');
