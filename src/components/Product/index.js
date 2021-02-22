@@ -4,18 +4,13 @@ import { InputNumber } from 'primereact/inputnumber';
 import { Button } from 'primereact/button';
 import ProductViewCount from '../ProductViewCount';
 import './index.css'
+import useProductCount from '../../useProductCount';
 
 const Product = ({price}) => {
-    const [productPrice, setProductPrice] = useState(price);
-    const [productCount, setProductCount] = useState(1);
 
-    useEffect(() => {
-        console.log('%c[Update] useEffect 🔁', 'color: aqua');
-        let calculatedPrice = price;
-        setProductPrice(() => productCount * calculatedPrice);
-    
-        return () => console.log('%c[Cleanup] the useEffect', 'color: tomato');
-      }, [productCount]);
+    const [productPrice, productCount, setProductCount, setProductPrice] = useProductCount(
+        { price }
+      );
 
     return(
         <div className='product-image'>
