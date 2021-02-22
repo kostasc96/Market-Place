@@ -17,9 +17,9 @@ function App() {
     <div>
       {/** 💣[BUG] See the console for error */}
       <div class='empty-cart' align="right">
-        <Button className="p-button-danger">
+        <button>
           Empty Cart
-        </Button>
+        </button>
       </div>
       <div className='cart' align="center">
         <Product price={0.093} />
