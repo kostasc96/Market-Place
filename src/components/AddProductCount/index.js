@@ -3,13 +3,14 @@ import ProductViewsWithPrice from '../ProductViews';
 import { Button } from 'primereact/button';
 import ProductViewCount from '../ProductViewCount';
 
-const AddProductCount = ({ price, count, ...props }) => {
-    const [productCount, setProductCount] = useState(count);
-    const [productPrice, setProductPrice] = useState(price);
+const AddProductCount = ({ productPrice, productCount,setProductCount,setProductPrice, ...props }) => {
+    // You lifted the state
+    // const [productCount, setProductCount] = useState(count);
+    // const [productPrice, setProductPrice] = useState(price);
 
     useEffect(() => {
         console.log('%c[Update] useEffect 🔁', 'color: aqua');
-        let calculatedPrice = price;
+        let calculatedPrice = productPrice;
         setProductPrice(() => productCount * calculatedPrice);
     
         return () => console.log('%c[Cleanup] the useEffect', 'color: tomato');

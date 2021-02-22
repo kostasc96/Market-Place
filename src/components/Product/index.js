@@ -26,7 +26,8 @@ const Product = ({price}) => {
             </div>
             <div>
                 <ProductViewCount count={productCount}/>
-                <AddProductCount price={productPrice} count={productCount}/>
+                {/** You need to lift the state up */}
+                <AddProductCount productPrice={productPrice} setProductPrice={setProductPrice} setProductCount={setProductCount} productCount={productCount}/>
             </div>
         </div>
     );
