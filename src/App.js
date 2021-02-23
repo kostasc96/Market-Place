@@ -1,27 +1,21 @@
+import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom';
 import { Button } from 'primereact/button';
 import './App.css';
+import AllProducts from './components/AllProducts';
 import Product from './components/Product';
+import { CartProvider } from './useAddToCart';
 import { ProductProvider } from './useProductCount';
 
 function App() {
   return (
     <div>
-      <div class='empty-cart' align="right">
-        <Button>
-          Empty Cart
-        </Button>
-      </div>
-      <div className='cart' align="center">
-      <ProductProvider>
-        <Product price={0.093} />
-      </ProductProvider>
-      <ProductProvider>
-        <Product price={0.084} />
-      </ProductProvider>
-      <ProductProvider>
-        <Product price={0.091} />
-      </ProductProvider>
-      </div>
+      <Router>
+        <Route path='/products'>
+          <CartProvider>
+            <AllProducts/>
+          </CartProvider>
+        </Route>
+      </Router>
     </div>
   );
 }

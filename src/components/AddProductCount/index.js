@@ -1,7 +1,6 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import ProductViewsWithPrice from '../ProductViews';
 import { Button } from 'primereact/button';
-import ProductViewCount from '../ProductViewCount';
 import useProductCount, { ProductContext } from '../../useProductCount';
 
 const AddProductCount = () => {
@@ -22,7 +21,7 @@ const AddProductCount = () => {
           Add or remove quantity of products:  
           <Button label="-" className="p-button-danger"
             onClick={() => setProductCount((count) => count - 1)}
-            disabled={productCount < 0}
+            disabled={productCount < 1}
           />
           <Button label="+" className="p-button-success"
             onClick={() => setProductCount((count) => count + 1)}

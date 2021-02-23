@@ -13,12 +13,6 @@
   }
 }
 
-.cart{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -41,8 +35,4 @@
   to {
     transform: rotate(360deg);
   }
-}
-
-.empty-cart{
-  margin-bottom: 50px;;
 }
