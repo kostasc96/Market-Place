@@ -26,7 +26,7 @@ const Product = ({price}) => {
                 <InputNumber value={productCount} min={0} onValueChange={(e) => setProductCount(e.value)} />
                 {/* <Button label="Add" value="Enter" disabled={productCount<0} onClick={() => setProductCount(productCount) }/> */}
             </div>
-            <div>
+            <div class='add-product'>
                 {/** You need to lift the state up */}
                 <AddProductCount/>
             </div>

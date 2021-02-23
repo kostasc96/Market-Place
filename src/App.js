@@ -7,7 +7,7 @@ function App() {
   return (
     <div>
       <div class='empty-cart' align="right">
-        <Button z>
+        <Button>
           Empty Cart
         </Button>
       </div>
