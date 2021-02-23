@@ -3,6 +3,7 @@ import Product from '../Product';
 import { ProductProvider } from '../../useProductCount';
 import useAddToCart,{CartProvider, CartContext } from '../../useAddToCart';
 import './index.css'
+import ProductBasicInfo from '../ProductBasicInfo';
 
 const AllProducts = () => {
 
@@ -10,20 +11,23 @@ const AllProducts = () => {
 
   return (
     <div>
-      <div className='empty-cart' align="right">
+      <div className='show-cart' align="right">
+        <button disabled={count<1}>
+          Show Cart
+        </button>
         <button disabled={count<1}>
           Empty Cart
         </button>
       </div>
       <div className='cart' align="center">
       <ProductProvider>
-        <Product price={0.093} />
+        <ProductBasicInfo prodPrice={0.093} productId={1}/>
       </ProductProvider>
       <ProductProvider>
-        <Product price={0.084} />
+        <ProductBasicInfo prodPrice={0.084} productId={2}/>
       </ProductProvider>
       <ProductProvider>
-        <Product price={0.091} />
+        <ProductBasicInfo prodPrice={0.091} productId={3}/>
       </ProductProvider>
       </div>
     </div>
