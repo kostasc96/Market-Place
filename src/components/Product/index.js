@@ -1,3 +1,4 @@
+import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom';
 import AddProductCount from '../AddProductCount';
 import { useEffect, useState } from 'react';
 import { InputNumber } from 'primereact/inputnumber';
@@ -50,6 +51,9 @@ const Product = () => {
                     <button onClick={() => handleAddProduct({idOfProduct:productId,countOfProduct:productCount,priceOfProduct:productPrice,productsList:allCartItems})}>
                         Add To Cart
                     </button>
+                </div>
+                <div className='link-home'>
+                    <Link to={`/products`}> Go To Product Page</Link>
                 </div>
             </div>
         </div>

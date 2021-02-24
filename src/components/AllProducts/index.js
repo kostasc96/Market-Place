@@ -14,10 +14,10 @@ const AllProducts = () => {
         <button disabled={allCartItems.length<1}>
           Show Cart
         </button>
-        <button disabled={allCartItems.length<1} onClick={() => handleEmptyCart({productList:allCartItems})}>
-          Empty Cart
-        </button>
-      </div>
+            <button disabled={allCartItems.length<1} onClick={() => handleEmptyCart({productList:allCartItems, window:window})}>
+              Empty Cart
+            </button>
+        </div>
       <div className='cart' align="center">
       <ProductProvider>
         <ProductBasicInfo prodPrice={0.093} productId={1}/>
