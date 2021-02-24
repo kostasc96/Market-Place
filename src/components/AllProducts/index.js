@@ -7,15 +7,15 @@ import ProductBasicInfo from '../ProductBasicInfo';
 
 const AllProducts = () => {
 
-  const { id,setId,count,setCount,priceProduct,setPriceProduct ,allCartItems,setAllCartItems } = useAddToCart();
+  const { allCartItems,setAllCartItems } = useAddToCart();
 
   return (
     <div>
       <div className='show-cart' align="right">
-        <button disabled={count<1}>
+        <button disabled={allCartItems.length<1}>
           Show Cart
         </button>
-        <button disabled={count<1}>
+        <button disabled={allCartItems.length<1}>
           Empty Cart
         </button>
       </div>

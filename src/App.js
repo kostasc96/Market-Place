@@ -11,16 +11,11 @@ function App() {
   return (
     <div>
       <Router>
-        {/* We have now only one path for the /products 
-        we need to also add a route for individual products eg product/:id */}
         <Switch>
           <Route path='/products'>
-            {/* I would also move the cartProvider higher */}
             <AllProducts />
           </Route>
           <Route path='/product/:id'>
-            {/* I would also move the cartProvider higher */}
-            {/* Is the ProductProvider necessary? */}
             <ProductProvider>
               <Product/>
             </ProductProvider>

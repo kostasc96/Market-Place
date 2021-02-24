@@ -6,7 +6,7 @@ const variables = {price:0};
 export const ProductContext = createContext();
 
 export const ProductProvider = ({ children }) => {
-    const [productCount, setProductCount] = useState(1);
+    const [productCount, setProductCount] = useState(0);
     const [productPrice, setProductPrice] = useState(variables.price);
 
   return (
