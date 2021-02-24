@@ -1,4 +1,5 @@
 const withPrice = (Component) => {
+
     const NewPrice = ({ price, ...props }) => {
       //Example call an external service
   

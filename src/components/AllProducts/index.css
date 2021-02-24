@@ -9,5 +9,11 @@
   }
 
   .show-cart{
-    margin-bottom: 50px;;
+    margin-top:10px;
+    margin-bottom: 50px;
+    margin-right:20px;
+  }
+
+  .empty-do{
+    margin-top:10px;
   }

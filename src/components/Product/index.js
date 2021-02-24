@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import AddProductCount from '../AddProductCount';
 import { useEffect, useState } from 'react';
 import { InputNumber } from 'primereact/inputnumber';
@@ -22,19 +22,6 @@ const Product = () => {
     
         return () => console.log('%c[Cleanup] the useEffect', 'color: tomato');
       }, [productCount]);
-
-    
-      useEffect(() => {
-        if(flagItem == true && productCount > 0){
-            let obj = {productId:productId, numberOfProducts:productCount, totalPrice:productPrice};
-            allCartItems.push(obj); 
-            console.log(allCartItems.length);
-            console.log('Item added');
-        }
-        console.log('%c[Update] useEffect 🔁', 'color: aqua');
-        console.log('In add to cart');
-        return () => console.log('%c[Cleanup] the useEffect', 'color: tomato');
-      }, [flagItem]);
 
 
     return(

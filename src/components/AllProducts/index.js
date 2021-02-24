@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { ProductProvider } from '../../useProductCount';
 import useAddToCart,{CartProvider, CartContext } from '../../useAddToCart';
 import './index.css'
@@ -11,12 +12,14 @@ const AllProducts = () => {
   return (
     <div>
       <div className='show-cart' align="right">
-        <button disabled={allCartItems.length<1}>
-          Show Cart
-        </button>
-            <button disabled={allCartItems.length<1} onClick={() => handleEmptyCart({productList:allCartItems, window:window})}>
-              Empty Cart
-            </button>
+        <div>
+          <Link to={`/cart`}> Show Cart</Link>
+        </div>
+        <div>
+          <button className="empty-do" disabled={allCartItems.length<1} onClick={() => handleEmptyCart({productList:allCartItems, window:window})}>
+            Empty Cart
+          </button>
+          </div>
         </div>
       <div className='cart' align="center">
       <ProductProvider>
