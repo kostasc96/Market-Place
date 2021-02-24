@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Link, Route, Switch, useParams } from 'react-router-dom';
 import { useState } from 'react';
 import AddProductCount from '../AddProductCount';
 import './index.css'
@@ -20,9 +20,10 @@ const ProductBasicInfo = ({prodPrice,productId}) => {
             </div>
         </div>
             <div>
-                <button onClick={() => {handleClickProduct(productId,prodPrice)}}>
+                <Link to={`/product/${productId}`}> Go To Product Page</Link>
+                {/* <button onClick={() => {handleClickProduct(productId ?? id,prodPrice)}}>
                     Go To Product Page
-                </button>
+                </button> */}
             </div>
         </div>
     );

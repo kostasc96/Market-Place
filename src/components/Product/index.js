@@ -4,8 +4,12 @@ import { InputNumber } from 'primereact/inputnumber';
 import './index.css'
 import useProductCount,{ProductProvider, ProductContext } from '../../useProductCount';
 import useAddToCart,{CartProvider, CartContext } from '../../useAddToCart';
+import { useParams } from 'react-router-dom';
 
 const Product = ({price,prodId}) => {
+    // Base on the product ID would make an API call to get more product details
+    // Here we can just need to query the list  of products with productId
+    let { productId } = useParams();
 
     const { productPrice, productCount, setProductPrice, setProductCount } = useProductCount();
     const { id,setId,count,setCount,priceProduct,setPriceProduct ,allCartItems,setAllCartItems } = useAddToCart();
@@ -43,6 +47,7 @@ const Product = ({price,prodId}) => {
                 <AddProductCount/>
             </div>
             <div>
+                {/* // this is hard to read and understand */}
                 <button
                 onClick={() => setId((id) =>0), setCount((count) =>productCount), setPriceProduct((priceProduct) =>productPrice)}
                 disabled={productCount < 1}>
