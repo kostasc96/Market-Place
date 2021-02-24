@@ -3,8 +3,8 @@ const handleAddProduct = ({idOfProduct, countOfProduct, priceOfProduct, products
     productsList.push(obj); 
     console.log(productsList.length);
     console.log('Item added');
-    console.log(countOfProduct);
-    console.log(priceOfProduct);
+    console.log(obj.productId);
+    console.log(obj.numberOfProducts);
 }
 
 export default handleAddProduct;
