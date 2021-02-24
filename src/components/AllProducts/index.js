@@ -1,9 +1,8 @@
-import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom';
-import Product from '../Product';
 import { ProductProvider } from '../../useProductCount';
 import useAddToCart,{CartProvider, CartContext } from '../../useAddToCart';
 import './index.css'
 import ProductBasicInfo from '../ProductBasicInfo';
+import handleEmptyCart from '../handleEmptyCart';
 
 const AllProducts = () => {
 
@@ -15,7 +14,7 @@ const AllProducts = () => {
         <button disabled={allCartItems.length<1}>
           Show Cart
         </button>
-        <button disabled={allCartItems.length<1}>
+        <button disabled={allCartItems.length<1} onClick={() => handleEmptyCart({productList:allCartItems})}>
           Empty Cart
         </button>
       </div>

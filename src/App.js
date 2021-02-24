@@ -20,6 +20,11 @@ function App() {
               <Product/>
             </ProductProvider>
           </Route>
+          {/* <Route path='/product/cart'>
+            <ProductProvider>
+              <Cart/>
+            </ProductProvider>
+          </Route> */}
         </Switch>
       </Router>
     </div>
