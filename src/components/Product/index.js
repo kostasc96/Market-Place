@@ -4,6 +4,7 @@ import { InputNumber } from 'primereact/inputnumber';
 import './index.css'
 import useProductCount,{ProductProvider, ProductContext } from '../../useProductCount';
 import useAddToCart,{CartProvider, CartContext } from '../../useAddToCart';
+import handleAddProduct from '../handleAddProduct';
 import { useParams } from 'react-router-dom';
 
 const Product = () => {
@@ -13,13 +14,13 @@ const Product = () => {
     const { productPrice, productCount, setProductPrice, setProductCount } = useProductCount();
     const { allCartItems, setAllCartItems } = useAddToCart();
 
-    // useEffect(() => {
-    //     console.log('%c[Update] useEffect 🔁', 'color: aqua');
-    //     let calculatedPrice = productPrice;
-    //     setProductPrice(() => productCount * calculatedPrice);
+    useEffect(() => {
+        console.log('%c[Update] useEffect 🔁', 'color: aqua');
+        let calculatedPrice = productPrice;
+        setProductPrice(() => productCount * calculatedPrice);
     
-    //     return () => console.log('%c[Cleanup] the useEffect', 'color: tomato');
-    //   }, [productCount]);
+        return () => console.log('%c[Cleanup] the useEffect', 'color: tomato');
+      }, [productCount]);
 
     
       useEffect(() => {
@@ -46,7 +47,7 @@ const Product = () => {
                     <AddProductCount/>
                 </div>
                 <div className='details'>
-                    <button onClick={() => {flagItem=true}} disabled={productCount < 1}>
+                    <button onClick={() => handleAddProduct({idOfProduct:productId,countOfProduct:productCount,priceOfProduct:productPrice,productsList:allCartItems})}>
                         Add To Cart
                     </button>
                 </div>
