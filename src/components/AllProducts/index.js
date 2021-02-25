@@ -4,6 +4,7 @@ import useAddToCart,{CartProvider, CartContext } from '../../useAddToCart';
 import './index.css'
 import ProductBasicInfo from '../ProductBasicInfo';
 import handleEmptyCart from '../handleEmptyCart';
+import { products } from '../../config';
 
 const AllProducts = () => {
 
@@ -22,15 +23,12 @@ const AllProducts = () => {
           </div>
         </div>
       <div className='cart' align="center">
-      <ProductProvider>
-        <ProductBasicInfo prodPrice={0.093} productId={1}/>
-      </ProductProvider>
-      <ProductProvider>
-        <ProductBasicInfo prodPrice={0.084} productId={2}/>
-      </ProductProvider>
-      <ProductProvider>
-        <ProductBasicInfo prodPrice={0.091} productId={3}/>
-      </ProductProvider>
+        {/* Product provider makes little sense because of the scale on the component nesting */}  
+        {products.length>0 && (
+          products.map( product => (
+              <ProductBasicInfo key={product.id} prodPrice={product.price} productId={product.id}/>
+          ))
+        )}
       </div>
     </div>
   );

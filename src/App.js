@@ -19,14 +19,10 @@ function App() {
             <AllProducts />
           </Route>
           <Route path='/product/:id'>
-            <ProductProvider>
               <Product/>
-            </ProductProvider>
           </Route>
           <Route path='/cart'>
-            <ProductProvider>
               <Cart/>
-            </ProductProvider>
           </Route>
         </Switch>
       </Router>

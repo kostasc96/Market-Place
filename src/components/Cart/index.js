@@ -6,7 +6,7 @@ import CartProduct from '../CartProduct';
 const Cart = () => {
     const { allCartItems, setAllCartItems } = useAddToCart();
 
-
+console.log(allCartItems);
     if(allCartItems.length == 0){
         return (
             <div>
@@ -16,10 +16,20 @@ const Cart = () => {
     } else {
         return(
             <div className='display-cart-products'>
+                {/* 
+                
+                ⚡️[Improvement]
+                If you want to use map then you need to return something
+                You can use the short () => () or () => {
+                    return ()
+                }
+                Try to use consistent variable names/props
+                */}
+                
                 <div>
-                    {allCartItems.map((element) => {
-                        <CartProduct cId = {element.productId} cPrice={element.totalPrice} cCount = {element.numberOfProducts}/>
-                        })                            
+                    {allCartItems.map((element) => (
+                        <CartProduct  key={element.id} cId = {element.productId} cPrice={element.totalPrice} cCount = {element.numberOfProducts}/>
+                    ))                            
                     }
                 </div>
                 <div>

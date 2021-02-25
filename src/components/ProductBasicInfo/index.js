@@ -9,7 +9,6 @@ import Product from '../Product';
 
 const ProductBasicInfo = ({prodPrice,productId}) => {
     const {flag,setFlag} = useState(false);
-    const { allCartItems, setAllCartItems } = useProductCount();
 
     return(
         <div className='display-product'>

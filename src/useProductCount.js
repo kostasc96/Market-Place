@@ -1,13 +1,12 @@
 import { useState, useEffect, createContext, useContext } from 'react';
 
-const variables = {price:0};
 
 
 export const ProductContext = createContext();
 
 export const ProductProvider = ({ children }) => {
     const [productCount, setProductCount] = useState(0);
-    const [productPrice, setProductPrice] = useState(variables.price);
+    const [productPrice, setProductPrice] = useState(0);
 
   return (
     <ProductContext.Provider value={{ productPrice, productCount, setProductPrice, setProductCount }}>
@@ -18,7 +17,9 @@ export const ProductProvider = ({ children }) => {
 
 
 const useProductCount = () => {
-    const { productPrice, productCount, setProductPrice, setProductCount } = useContext(ProductContext);
+  const [productCount, setProductCount] = useState(0);
+  const [productPrice, setProductPrice] = useState(0);
+
     return { productPrice, productCount, setProductPrice, setProductCount };
   };
 

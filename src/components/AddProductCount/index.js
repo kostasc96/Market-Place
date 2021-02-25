@@ -3,9 +3,7 @@ import ProductViewsWithPrice from '../ProductViews';
 import { Button } from 'primereact/button';
 import useProductCount, { ProductContext } from '../../useProductCount';
 
-const AddProductCount = () => {
-
-    const { productPrice, productCount, setProductPrice, setProductCount } = useProductCount();
+const AddProductCount = ({productPrice, productCount, setProductPrice, setProductCount}) => {
 
     useEffect(() => {
         console.log('%c[Update] useEffect 🔁', 'color: aqua');
