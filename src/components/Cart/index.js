@@ -26,13 +26,13 @@ console.log(allCartItems);
                 Try to use consistent variable names/props
                 */}
                 
-                <div>
+                <div className="cart-prods">
                     {allCartItems.map((element) => (
                         <CartProduct  key={element.id} cId = {element.productId} cPrice={element.totalPrice} cCount = {element.numberOfProducts}/>
                     ))                            
                     }
                 </div>
-                <div>
+                <div className="link-to-home">
                     <Link to={`/products`}> Go To Home Page</Link>
                 </div>
             </div>
