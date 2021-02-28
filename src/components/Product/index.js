@@ -1,6 +1,7 @@
 import {Link} from 'react-router-dom';
 import AddProductCount from '../AddProductCount';
 import { useEffect, useState } from 'react';
+import { Grid, Box, makeStyles } from '@material-ui/core';
 import { InputNumber } from 'primereact/inputnumber';
 import './index.css'
 import useProductCount,{ProductProvider, ProductContext } from '../../useProductCount';
@@ -9,12 +10,24 @@ import useAddToCart,{CartProvider, CartContext } from '../../useAddToCart';
 import { useParams, useHistory } from 'react-router-dom';
 import { products } from '../../config'
 
+const useStyles = makeStyles((theme) => ({
+    image: {
+      borderRadius: '1.75rem',
+      padding: '.35rem',
+      '&:hover': {
+        // backgroundColor: ({cti}) => cti,
+        backgroundColor: theme.palette.primary.light,
+      },
+    },
+  }));
+
 const Product = () => {
     let {flagItem, setFlagItem} = useState(false);
     const { productPrice, productCount, setProductPrice, setProductCount } = useProductCount();
     const { allCartItems, setAllCartItems } = useAddToCart();
     let { id: productId } = useParams();
     let history = useHistory();
+    const classes = useStyles({ cti: '#2ba6df' });
 
     const product = products.find( p => p.id === parseInt(productId));
 
@@ -61,25 +74,25 @@ const Product = () => {
         })
     }
     return(
-        <div className='product'>
-            <div className='product-image'>
-                <img src='https://picsum.photos/200/300' />
-                <div>
+        <Grid className='product'>
+            <Grid item xs={12} md={4} className='product-image'>
+                <img className={classes.image} src='https://picsum.photos/200/300' />
+                <Box m={1}>
                     <InputNumber value={productCount} min={0} onValueChange={(e) => setProductCount(e.value)} />
-                </div>
-                <div className='add-product'>
+                </Box>
+                <Box  m={1} className='add-product'>
                     <AddProductCount  {...{ productPrice, productCount, setProductPrice, setProductCount} }/>
-                </div>
-                <div className='details'>
+                </Box>
+                <Box  m={1} className='details'>
                     <button onClick={handleAddProduct}>
                         Add To Cart
                     </button>
-                </div>
-                <div className='link-home'>
+                </Box>
+                <Box  m={1} className='link-home'>
                     <Link to={`/products`}> Go To Product Page</Link>
-                </div>
-            </div>
-        </div>
+                </Box>
+            </Grid>
+        </Grid>
     );
 }
 
