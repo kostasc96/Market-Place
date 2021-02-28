@@ -20,7 +20,7 @@ const Cart = () => {
         return(
             <div className='display-cart-products'>
                 <Grid container>
-                    <Grid item xs={12} md={8}>
+                    <Grid item xs={12}>
                         <Box className="cart-prods">
                             {allCartItems.map((element) => (
                                 <CartProduct  key={element.id} cId = {element.productId} cPrice={element.totalPrice} cCount = {element.numberOfProducts}/>
@@ -28,7 +28,7 @@ const Cart = () => {
                             }
                         </Box>
                     </Grid>
-                    <Grid item xs={12} md={4} className="link-to-home">
+                    <Grid className="link-to-home">
                         <Link to={`/products`}> Go To Home Page</Link>
                     </Grid>
                 </Grid>
