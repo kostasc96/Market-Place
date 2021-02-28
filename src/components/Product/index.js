@@ -15,7 +15,6 @@ const useStyles = makeStyles((theme) => ({
       borderRadius: '1.75rem',
       padding: '.35rem',
       '&:hover': {
-        // backgroundColor: ({cti}) => cti,
         backgroundColor: theme.palette.primary.light,
       },
     },

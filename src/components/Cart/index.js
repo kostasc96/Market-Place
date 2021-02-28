@@ -19,15 +19,6 @@ const Cart = () => {
     } else {
         return(
             <div className='display-cart-products'>
-                {/* 
-                
-                ⚡️[Improvement]
-                If you want to use map then you need to return something
-                You can use the short () => () or () => {
-                    return ()
-                }
-                Try to use consistent variable names/props
-                */}
                 <Grid container>
                     <Grid item xs={12} md={8}>
                         <Box className="cart-prods">
